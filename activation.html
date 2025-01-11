@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تفعيل الكود</title>
+    <title>تفعيل التطبيق</title>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
@@ -26,55 +26,77 @@
             font-size: 2.5em;
             margin-bottom: 20px;
         }
-        .input-container {
-            margin: 20px 0;
-        }
         input[type="text"] {
-            font-size: 1.2em;
+            width: 70%;
             padding: 10px;
+            font-size: 1.2em;
+            margin-bottom: 20px;
             border: 1px solid #ccc;
             border-radius: 8px;
-            width: 80%;
-            margin-bottom: 10px;
         }
-        button {
+        .btn-verify {
             padding: 10px 20px;
             font-size: 1.2em;
-            margin-top: 10px;
-            background-color: #4CAF50;
+            background-color: #28a745;
             color: white;
             border: none;
             border-radius: 8px;
             cursor: pointer;
         }
-        button:hover {
-            background-color: #45a049;
+        .btn-verify:hover {
+            background-color: #218838;
+        }
+        .message {
+            margin-top: 20px;
+            font-size: 1.2em;
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <h1>تفعيل الكود</h1>
-        <p>أدخل الكود الخاص بك لتفعيل التطبيق:</p>
-
-        <div class="input-container">
-            <input type="text" id="activationCode" placeholder="أدخل الكود هنا">
-            <button onclick="activateCode()">تفعيل</button>
-        </div>
-
-        <script>
-            function activateCode() {
-                const code = document.getElementById("activationCode").value;
-                if (code === "") {
-                    alert("يرجى إدخال الكود لتفعيله.");
-                } else {
-                    alert("تم تفعيل الكود بنجاح!");
-                    // هنا يمكنك إضافة الشروط الخاصة بتفعيل الكود إذا كان لديك نظام تفعيل
-                }
-            }
-        </script>
+        <h1>تفعيل التطبيق</h1>
+        <p>الرجاء إدخال الكود الذي تم تزويدك به بعد الشراء:</p>
+        
+        <!-- حقل إدخال الكود -->
+        <input type="text" id="activationCode" placeholder="أدخل الكود هنا...">
+        
+        <!-- زر التفعيل -->
+        <button class="btn-verify" onclick="verifyCode()">تفعيل</button>
+        
+        <!-- رسالة الإخطار -->
+        <div id="message" class="message"></div>
     </div>
+
+    <script>
+        // الكود الصحيح
+        const correctCode = "12345-67890"; // هنا يتم استبداله بالكود الصحيح الذي يتم إرساله بعد الدفع.
+        
+        // دالة التحقق من الكود
+        function verifyCode() {
+            const enteredCode = document.getElementById("activationCode").value.trim();
+            const messageDiv = document.getElementById("message");
+            
+            if (enteredCode === "") {
+                messageDiv.innerHTML = "يرجى إدخال الكود.";
+                messageDiv.style.color = "red";
+                return;
+            }
+            
+            if (enteredCode === correctCode) {
+                messageDiv.innerHTML = "تم تفعيل التطبيق بنجاح!";
+                messageDiv.style.color = "green";
+                // إعادة التوجيه إلى رابط التطبيق بعد التفعيل
+                setTimeout(function() {
+                    window.location.href = "https://hacena.github.io/app/";
+                }, 2000);  // تأخير 2 ثانية لظهور رسالة التفعيل قبل التوجيه
+            } else {
+                messageDiv.innerHTML = "الكود غير صحيح. حاول مرة أخرى.";
+                messageDiv.style.color = "red";
+            }
+        }
+    </script>
 
 </body>
 </html>
