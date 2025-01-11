@@ -3,95 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>صفحة البيع والتفعيل</title>
+    <title>شرح التطبيق بالفيديو</title>
     <style>
         body {
             font-family: 'Cairo', sans-serif;
-            background-color: #f9f9f9;
+            background-color: #f4f4f4;
             color: #333;
+            text-align: center;
             margin: 0;
             padding: 20px;
-            direction: rtl;
         }
-        h1, h2 {
-            text-align: center;
-        }
-        .section {
-            margin: 20px 0;
+        .container {
+            width: 80%;
+            margin: 0 auto;
             padding: 20px;
             background-color: #fff;
             border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
-        .section p {
-            font-size: 1.1em;
-            line-height: 1.6;
+        h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
         }
-        .btn {
-            display: block;
-            width: 200px;
-            margin: 20px auto;
-            padding: 10px;
-            background-color: #4CAF50;
-            color: white;
-            text-align: center;
-            font-size: 1.2em;
+        .video-container {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        video {
+            width: 80%;
+            height: auto;
             border-radius: 8px;
-            cursor: pointer;
-            text-decoration: none;
-        }
-        .btn:hover {
-            background-color: #45a049;
-        }
-        .highlight {
-            background-color: yellow;
         }
     </style>
 </head>
 <body>
-    <h1>مرحبا بكم في صفحة البيع والتفعيل</h1>
-    <div class="section">
-        <h2>من نحن</h2>
-        <p>نحن نقدم تطبيقًا مبتكرًا لتحويل النص إلى صوت بشكل احترافي، لتلبية احتياجاتك في مختلف المجالات...</p>
+
+    <div class="container">
+        <h1>شرح التطبيق بالفيديو</h1>
+        <p>شاهد الفيديو التالي لمعرفة كيفية استخدام التطبيق:</p>
+
+        <div class="video-container">
+            <video controls>
+                <source src="videos/tutorial.mp4" type="video/mp4">
+                متصفحك لا يدعم الفيديو.
+            </video>
+        </div>
     </div>
 
-    <div class="section">
-        <h2>سياسة الخصوصية</h2>
-        <p>نحن نحترم خصوصيتك، ولن نقوم بمشاركة بياناتك الشخصية مع أي طرف ثالث...</p>
-    </div>
-
-    <div class="section">
-        <h2>سياسة الاستخدام</h2>
-        <p>من خلال استخدامك لتطبيقنا، فإنك توافق على الالتزام بالشروط التالية...</p>
-    </div>
-
-    <div class="section">
-        <h2>الشروط والأحكام</h2>
-        <p>تتضمن هذه الشروط الأحكام المتعلقة باستخدام التطبيق...</p>
-    </div>
-
-    <div class="section">
-        <h2>تفعيل الكود</h2>
-        <label for="activationCode">أدخل الكود المرسل إليك لتفعيل التطبيق:</label>
-        <input type="text" id="activationCode" placeholder="أدخل الكود هنا">
-        <button class="btn" onclick="activateCode()">تفعيل الكود</button>
-    </div>
-
-    <div class="section" id="appLinkSection" style="display: none;">
-        <a class="btn" id="appLink" href="#" target="_blank">افتح التطبيق</a>
-    </div>
-
-    <script>
-        function activateCode() {
-            var code = document.getElementById('activationCode').value;
-            // تحقق من صحة الكود (مبدئيا هنا سيتم القبول لأي كود)
-            if (code.trim() !== "") {
-                document.getElementById("appLinkSection").style.display = "block";
-                document.getElementById("appLink").href = "https://link.to/your/app"; // رابط التطبيق
-            } else {
-                alert("الرجاء إدخال الكود");
-            }
-        }
-    </script>
 </body>
 </html>
