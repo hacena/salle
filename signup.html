@@ -1,40 +1,23 @@
-const express = require('express');
-const nodemailer = require('nodemailer');
-const app = express();
-app.use(express.json());  // استخدم express.json بدلاً من body-parser
-
-// إعداد الـ SMTP لإرسال البريد
-const transporter = nodemailer.createTransport({
-    service: 'gmail',
-    auth: {
-        user: 'your-email@gmail.com',
-        pass: 'your-email-password'
-    }
-});
-
-// إرسال رابط التفعيل
-app.post('/sendVerificationEmail', (req, res) => {
-    const { email } = req.body;
-
-    // رابط التفعيل
-    const verificationLink = `http://localhost:3000/verify?email=${email}`;
-
-    const mailOptions = {
-        from: 'your-email@gmail.com',
-        to: email,
-        subject: 'تفعيل حسابك',
-        text: `يرجى تفعيل حسابك باستخدام الرابط التالي: ${verificationLink}`
-    };
-
-    transporter.sendMail(mailOptions, function (err, info) {
-        if (err) {
-            return res.status(500).json({ success: false, message: err.message });
-        }
-        res.json({ success: true, message: 'تم إرسال الرابط بنجاح!' });
-    });
-});
-
-// بدء السيرفر على المنفذ 3000
-app.listen(3000, () => {
-    console.log('Server is running on port 3000');
-});
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل حساب جديد</title>
+</head>
+<body>
+    <h1>تسجيل حساب جديد</h1>
+    <form action="http://localhost:3000/sendVerificationEmail" method="POST">
+        <label for="name">الاسم:</label>
+        <input type="text" id="name" name="name" required><br><br>
+        
+        <label for="email">البريد الإلكتروني:</label>
+        <input type="email" id="email" name="email" required><br><br>
+        
+        <label for="password">كلمة المرور:</label>
+        <input type="password" id="password" name="password" required><br><br>
+        
+        <button type="submit">تسجيل</button>
+    </form>
+</body>
+</html>
