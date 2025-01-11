@@ -8,44 +8,46 @@
     <style>
         body {
             font-family: 'Cairo', sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
-            text-align: center;
+            background-color: #f5f5f5;
             margin: 0;
-            padding: 20px;
+            padding: 0;
         }
         .container {
             width: 80%;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 50px auto;
+            padding: 30px;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
         }
         h1 {
             font-size: 2.5em;
             margin-bottom: 20px;
+            color: #333;
+        }
+        p {
+            font-size: 1.2em;
+            color: #555;
         }
         button {
-            padding: 12px 30px;
-            font-size: 1.4em;
+            padding: 12px 25px;
+            font-size: 1.3em;
             margin-top: 20px;
-            background-color: #ff5722;
+            background-color: #4CAF50;
             color: white;
             border: none;
             border-radius: 8px;
             cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.3s ease;
+            transition: background-color 0.3s;
         }
         button:hover {
-            background-color: #e64a19;
-            transform: scale(1.05);
+            background-color: #45a049;
         }
         .links {
-            margin-top: 30px;
+            margin-top: 20px;
         }
         .links a {
-            font-size: 1.2em;
+            font-size: 1.1em;
             color: #4CAF50;
             text-decoration: none;
             margin: 10px;
@@ -53,32 +55,18 @@
         .links a:hover {
             text-decoration: underline;
         }
-        footer {
-            background-color: #333;
-            color: white;
-            padding: 20px 0;
-            margin-top: 30px;
-        }
-        footer .footer-links {
-            text-align: center;
-        }
-        footer .footer-links a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
-        }
-        footer .footer-links a:hover {
-            text-decoration: underline;
-        }
-        /* Video section */
         .video-container {
-            margin-top: 20px;
+            margin-top: 30px;
+            border: 2px solid #4CAF50;
+            padding: 10px;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            background-color: #f9f9f9;
         }
         iframe {
             width: 100%;
             height: 400px;
             border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
@@ -98,22 +86,12 @@
             <p>بعد الشراء، يمكنك التوجه إلى <a href="activation.html" target="_blank">صفحة التفعيل</a> لتفعيل التطبيق باستخدام الكود المرسل لك.</p>
         </div>
 
-        <!-- نافذة الفيديو لشرح التطبيق -->
+        <!-- نافذة الفيديو -->
         <div class="video-container">
-            <h2>شاهد شرح التطبيق:</h2>
-            <iframe src="video.mp4" title="شرح التطبيق" allowfullscreen></iframe>
+            <h3>شاهد شرح التطبيق</h3>
+            <iframe src="https://www.youtube.com/embed/9bZkp7q19f0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
     </div>
-
-    <!-- Footer -->
-    <footer>
-        <div class="footer-links">
-            <a href="privacy.html" target="_blank">سياسة الخصوصية</a>
-            <a href="terms.html" target="_blank">الشروط والأحكام</a>
-            <a href="about.html" target="_blank">من نحن</a>
-            <a href="contact.html" target="_blank">اتصل بنا</a>
-        </div>
-    </footer>
 
 </body>
 </html>
