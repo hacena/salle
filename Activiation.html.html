@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تفعيل الترخيص</title>
+</head>
+<body>
+
+<h1>أدخل مفتاح الترخيص لتفعيل التطبيق</h1>
+<input type="text" id="licenseKey" placeholder="أدخل مفتاح الترخيص">
+<button onclick="verifyLicense()">تفعيل</button>
+
+<p id="message"></p>
+
+<script>
+    function verifyLicense() {
+        const licenseKey = document.getElementById("licenseKey").value.trim();
+        const deviceId = "device_1"; // يمكنك الحصول على معرف الجهاز من متصفح المستخدم
+
+        if (licenseKey) {
+            fetch('http://localhost:3000/verify-license', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ licenseKey, deviceId })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === "success") {
+                    document.getElementById("message").innerText = "تم التفعيل بنجاح!";
+                } else {
+                    document.getElementById("message").innerText = data.message;
+                }
+            })
+            .catch(error => {
+                document.getElementById("message").innerText = "حدث خطأ! يرجى المحاولة لاحقًا.";
+            });
+        }
+    }
+</script>
+
+</body>
+</html>
