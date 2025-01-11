@@ -10,7 +10,7 @@ app.use(bodyParser.json());
 const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-        user: 'ha2502ha@gmail.com', // استبدل بهذا بريدك الإلكتروني الفعلي
+        user: 'your email.com', // استبدل بهذا بريدك الإلكتروني الفعلي
         pass: 'const express = require('express');
 const nodemailer = require('nodemailer');
 const bodyParser = require('body-parser');
@@ -23,8 +23,8 @@ app.use(bodyParser.json());
 const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-        user: 'example-email@gmail.com', // استبدل بهذا بريدك الإلكتروني الفعلي
-        pass: 'your-email-password'      // استبدل بهذا كلمة مرور البريد الإلكتروني الفعلي
+        user: 'ha2502ha@gmail.com', // استبدل بهذا بريدك الإلكتروني الفعلي
+        pass: 'your-HA4141ha@'      // استبدل بهذا كلمة مرور البريد الإلكتروني الفعلي
     }
 });
 
