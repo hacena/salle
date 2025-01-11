@@ -39,24 +39,35 @@
         button:hover {
             background-color: #45a049;
         }
+        .links {
+            margin-top: 20px;
+        }
+        .links a {
+            font-size: 1.1em;
+            color: #4CAF50;
+            text-decoration: none;
+            margin: 10px;
+        }
+        .links a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
 
     <div class="container">
         <h1>شراء التطبيق</h1>
-        <p>بإمكانك شراء تطبيقنا المميز هنا:</p>
+        <p>بإمكانك شراء تطبيقنا المميز عبر الرابط التالي:</p>
 
-        <button onclick="purchase()">شراء الآن</button>
+        <!-- رابط الدفع عبر بايبال -->
+        <a href="https://www.paypal.com/ncp/payment/RFWQ8DGZJXCK8" target="_blank">
+            <button>شراء الآن عبر بايبال</button>
+        </a>
 
-        <script>
-            function purchase() {
-                // هنا يمكنك ربط عملية الدفع الخاصة بك
-                // بمجرد إتمام الدفع، سيتم توجيه العميل إلى صفحة التفعيل
-                alert("تم شراء التطبيق بنجاح! سيتم توجيهك إلى صفحة التفعيل.");
-                window.location.href = "activation.html";  // توجيه العميل إلى صفحة التفعيل
-            }
-        </script>
+        <!-- رابط صفحة التفعيل بعد إتمام الشراء -->
+        <div class="links">
+            <p>بعد الشراء، يمكنك التوجه إلى <a href="activation.html" target="_blank">صفحة التفعيل</a> لتفعيل التطبيق باستخدام الكود المرسل لك.</p>
+        </div>
     </div>
 
 </body>
