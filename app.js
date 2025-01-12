@@ -27,25 +27,6 @@ app.post('/signup', async (req, res) => {
         return res.status(400).send('تأكد من ملء جميع الحقول.');
     }
 
-    // إعداد محتوى رسالة البريد الإلكتروني
+    // إعداد محتوى رسالة البريد الإلكتروني بتنسيق HTML
     const mailOptions = {
-        from: 'hacenatek9@gmail.com', // بريدك الإلكتروني
-        to: email,
-        subject: 'تأكيد تسجيلك',
-        text: `مرحبًا ${username}!\n\nشكرًا لتسجيلك. هذه رسالة تأكيد للتسجيل.\n\nتحياتنا، فريق الدعم.`
-    };
-
-    try {
-        // إرسال البريد الإلكتروني
-        await transporter.sendMail(mailOptions);
-        res.send(`تم التسجيل بنجاح! وتم إرسال بريد إلكتروني إلى: ${email}`);
-    } catch (err) {
-        console.error('خطأ في إرسال البريد:', err);
-        res.status(500).send('حدث خطأ أثناء إرسال البريد الإلكتروني. يرجى المحاولة لاحقًا.');
-    }
-});
-
-// بدء الخادم
-app.listen(PORT, () => {
-    console.log(`Server running on http://localhost:${PORT}`);
-});
+        from: 'hacenatek
