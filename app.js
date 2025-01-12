@@ -11,10 +11,10 @@ app.use(express.urlencoded({ extended: true }));
 
 // إعداد nodemailer لإرسال البريد
 const transporter = nodemailer.createTransport({
-    service: 'gmail', // يمكنك استخدام خدمة بريد أخرى مثل Outlook أو Yahoo
+    service: 'gmail', // استخدم Gmail أو أي خدمة بريد أخرى
     auth: {
-        user: 'abouhoussem41a@gmail.com', // بريدك الإلكتروني
-        pass: 'HASSENE00a@  '   // كلمة المرور الخاصة ببريدك أو App Password
+        user: 'hacenatek9@gmail.com', // بريدك الإلكتروني
+        pass: 'HA09at09@' // كلمة المرور أو كلمة مرور التطبيق (App Password)
     }
 });
 
@@ -29,7 +29,7 @@ app.post('/signup', async (req, res) => {
 
     // إعداد محتوى رسالة البريد الإلكتروني
     const mailOptions = {
-        from: 'your-email@gmail.com',
+        from: 'hacenatek9@gmail.com', // بريدك الإلكتروني
         to: email,
         subject: 'تأكيد تسجيلك',
         text: `مرحبًا ${username}!\n\nشكرًا لتسجيلك. هذه رسالة تأكيد للتسجيل.\n\nتحياتنا، فريق الدعم.`
