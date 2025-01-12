@@ -13,8 +13,8 @@ app.use(express.urlencoded({ extended: true }));
 const transporter = nodemailer.createTransport({
     service: 'gmail', // يمكنك استخدام خدمة بريد أخرى مثل Outlook أو Yahoo
     auth: {
-        user: 'ha2502ha@gmail.com', // بريدك الإلكتروني
-        pass: 'ha2502HA@'   // كلمة المرور الخاصة ببريدك أو App Password
+        user: 'abouhoussem41a@gmail.com', // بريدك الإلكتروني
+        pass: 'HASSENE00a@  '   // كلمة المرور الخاصة ببريدك أو App Password
     }
 });
 
